@@ -1,22 +1,26 @@
-
 # Dotfiles
 
-Bu proje, terminal ayarlarımı yedeklemek ve GitHub'a yüklemek için kullanılan bir depodur. İçerisinde Zsh ve Powerlevel10k konfigürasyon dosyalarım bulunmaktadır.
+Bu proje, terminal ayarlarınızı kişiselleştirmenize yardımcı olmak için kullanılan bir konfigürasyon deposudur. Bu repo, Zsh terminali ve Powerlevel10k temasının özelleştirilmiş ayarlarını içerir.
 
-## İçerik
+## Terminal Görüntüsü
 
-- `.zshrc`: Zsh terminali için konfigürasyon dosyası.
-- `.p10k.zsh`: Powerlevel10k tema konfigürasyon dosyası.
+Aşağıdaki terminal ekran görüntüsü, bu konfigürasyon dosyaları ile elde edilecek görünümü göstermektedir:
+
+![Terminal Screenshot](zsh-example.png)
 
 ## Kurulum
 
-Aşağıdaki adımlar, dotfiles'ları farklı işletim sistemlerinde kurmak için kullanılabilir. Eğer sisteminizde gerekli araçlar yüklü değilse, talimatları takip ederek kurulum yapabilirsiniz.
+Aşağıdaki adımları takip ederek terminalinizde bu görünümü elde edebilirsiniz.
 
-### **Linux ve macOS**
+### **1. Gerekli Araçların Yüklenmesi**
+
+İlk olarak, Zsh ve Powerlevel10k'yi yüklemeniz gerekmektedir. İşletim sisteminize uygun talimatları aşağıda bulabilirsiniz.
+
+#### **Linux ve macOS**
 
 1. **Zsh Kurulumu**
 
-   Zsh genellikle Linux ve macOS sistemlerinde varsayılan olarak bulunur. Eğer yüklü değilse, aşağıdaki komutlarla yükleyebilirsiniz:
+   Zsh genellikle Linux ve macOS sistemlerinde varsayılan olarak bulunur. Eğer yüklenmemişse, aşağıdaki komutlarla yükleyebilirsiniz:
 
    - **Ubuntu/Debian:**
 
@@ -39,7 +43,7 @@ Aşağıdaki adımlar, dotfiles'ları farklı işletim sistemlerinde kurmak içi
 
 2. **Powerlevel10k Teması Kurulumu**
 
-   Powerlevel10k temasını yüklemek için önce [oh-my-zsh](https://ohmyz.sh/) kurmanız gerekebilir. Daha sonra Powerlevel10k'yi yükleyebilirsiniz:
+   Powerlevel10k temasını yüklemek için önce [Oh My Zsh](https://ohmyz.sh/) kurulumunu yapmanız gerekebilir. Daha sonra Powerlevel10k'yi yükleyebilirsiniz:
 
    ```bash
    # Oh My Zsh'i kurun (eğer daha önce kurulu değilse)
@@ -49,59 +53,45 @@ Aşağıdaki adımlar, dotfiles'ları farklı işletim sistemlerinde kurmak içi
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
    ```
 
-3. **Depoyu Klonlayın**
+#### **Windows**
 
-   Terminalde aşağıdaki komutu kullanarak bu depo dizinine klonlayabilirsiniz:
-
-   ```bash
-   git clone <your-git-repo-url> ~/dotfiles
-   ```
-
-4. **Dosyaları Yükleyin**
-
-   Kopyalanan dosyaları ilgili konumlarına taşıyın:
-
-   ```bash
-   cp ~/dotfiles/.zshrc ~/.zshrc
-   cp ~/dotfiles/.p10k.zsh ~/.p10k.zsh
-   ```
-
-5. **Zsh'yi Yeniden Başlatın**
-
-   Yapılandırma değişikliklerinin etkili olabilmesi için Zsh oturumunu yeniden başlatın:
-
-   ```bash
-   exec zsh
-   ```
-
-### **Windows**
-
-Windows'ta Zsh ve Powerlevel10k kullanmak için [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/) veya [Cygwin](https://www.cygwin.com/) gibi bir terminal emülatörü kurmanız gerekecektir.
+Windows üzerinde Zsh ve Powerlevel10k kullanmak için [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/) veya [Cygwin](https://www.cygwin.com/) kullanabilirsiniz.
 
 1. **WSL veya Cygwin Kurulumu**
 
-   WSL veya Cygwin'i yükledikten sonra yukarıdaki Linux ve macOS kurulum adımlarını takip edebilirsiniz.
+   WSL veya Cygwin'i yükledikten sonra, yukarıdaki Linux ve macOS talimatlarını takip ederek Zsh ve Powerlevel10k'yi kurabilirsiniz.
 
-2. **Depoyu Klonlayın ve Dosyaları Yükleyin**
+### **2. Depoyu Klonlayın**
 
-   Yukarıdaki adımları takip ederek gerekli dosyaları yükleyin ve konfigürasyonları uygulayın.
+Bu repo dizinini yerel bilgisayarınıza klonlayarak gerekli konfigürasyon dosyalarını elde edebilirsiniz:
 
-## Terminal Görüntüsü
+```bash
+git clone <your-git-repo-url> ~/dotfiles
+```
 
-Aşağıda terminal ayarlarımın görseli bulunmaktadır:
+### **3. Dosyaları Yükleyin**
 
-![Terminal Screenshot](zsh-example.png)
+Klonlanan dosyaları terminal konfigürasyonunuz için uygun konumlarına taşıyın:
 
+```bash
+cp ~/dotfiles/.zshrc ~/.zshrc
+cp ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+```
+
+### **4. Zsh'yi Yeniden Başlatın**
+
+Yapılandırma değişikliklerinin etkili olabilmesi için Zsh oturumunu yeniden başlatmanız gerekmektedir:
+
+```bash
+exec zsh
+```
 
 ## Notlar
 
 - `~/.zshrc` dosyası, Zsh terminalinizin genel ayarlarını ve eklentilerini içerir.
 - `~/.p10k.zsh` dosyası, Powerlevel10k temasının özelleştirilmiş ayarlarını içerir.
-- Her iki dosya da terminal deneyiminizi kişiselleştirmek için kullanılır.
+- Bu dosyalar, terminal deneyiminizi kişiselleştirmenize yardımcı olur.
 
 ## Lisans
 
 Bu projede kullanılan dosyalar kişisel kullanım içindir. Başka bir şekilde dağıtım yapmadan önce lisans şartlarını gözden geçirdiğinizden emin olun.
-```
-
-Bu README dosyasında, Zsh ve Powerlevel10k'nin nasıl kurulacağı ve kullanılacağı hakkında bilgi verdim. Ayrıca, eksik araçların nasıl yüklenebileceğini de belirttim. Görüntü yollarını ve diğer ayrıntıları projenize göre güncellediğinizden emin olun.
