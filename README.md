@@ -1,6 +1,6 @@
 # Dotfiles
 
-Bu proje, terminal ayarlarınızı kişiselleştirmenize yardımcı olmak için kullanılan bir konfigürasyon deposudur. Bu repo, Zsh terminali ve Powerlevel10k temasının özelleştirilmiş ayarlarını içerir.
+Bu proje, terminal ayarlarınızı kişiselleştirmenize yardımcı olmak için kullanılan bir konfigürasyon deposudur. Bu repo, Zsh terminali ve Powerlevel10k temasının yanı sıra bazı kullanışlı eklentileri içerir.
 
 ## Terminal Görüntüsü
 
@@ -53,6 +53,8 @@ Aşağıdaki adımları takip ederek terminalinizde bu görünümü elde edebili
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
    ```
 
+   Eğer ikonlar düzgün görünmüyorsa, gerekli fontları yüklemeniz gerekebilir. [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) bu tür sorunları çözmek için popüler bir seçenektir. Fontları yükledikten sonra terminalinizi yeniden başlatmanız gerekecektir.
+
 #### **Windows**
 
 Windows üzerinde Zsh ve Powerlevel10k kullanmak için [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/) veya [Cygwin](https://www.cygwin.com/) kullanabilirsiniz.
@@ -78,7 +80,35 @@ cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ```
 
-### **4. Zsh'yi Yeniden Başlatın**
+### **4. Eklentileri Kullanma**
+
+`.zshrc` dosyanızda aşağıdaki eklentiler etkinleştirilmiştir:
+
+- **`git`**: Git komutları için yardım ve otomatik tamamlama sağlar.
+- **`zsh-autosuggestions`**: Komut geçmişinize dayalı olarak otomatik tamamlama önerileri sunar.
+- **`zsh-syntax-highlighting`**: Yazdığınız komutları renklendirir, böylece komutunuzun geçerliliğini görsel olarak kontrol edebilirsiniz.
+
+Bu eklentilerin çalışabilmesi için, aşağıdaki komutları kullanarak gerekli paketleri yüklemeniz gerekebilir:
+
+```bash
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
+### **5. Temayı Değiştirme**
+
+Powerlevel10k temasının ayarlarını değiştirmek için aşağıdaki komutu kullanabilirsiniz:
+
+```bash
+p10k configure
+```
+
+Bu komut, tema konfigürasyonunu yeniden yapılandırmanıza olanak sağlar.
+
+### **6. Zsh'yi Yeniden Başlatın**
 
 Yapılandırma değişikliklerinin etkili olabilmesi için Zsh oturumunu yeniden başlatmanız gerekmektedir:
 
@@ -90,7 +120,7 @@ exec zsh
 
 - `~/.zshrc` dosyası, Zsh terminalinizin genel ayarlarını ve eklentilerini içerir.
 - `~/.p10k.zsh` dosyası, Powerlevel10k temasının özelleştirilmiş ayarlarını içerir.
-- Bu dosyalar, terminal deneyiminizi kişiselleştirmenize yardımcı olur.
+- `zsh-autosuggestions` ve `zsh-syntax-highlighting` eklentileri, terminal deneyiminizi daha verimli ve kullanıcı dostu hale getirir.
 
 ## Lisans
 
